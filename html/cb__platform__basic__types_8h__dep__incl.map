@@ -1,0 +1,9 @@
+<map id="cb_platform_basic_types.h" name="cb_platform_basic_types.h">
+<area shape="rect" id="node1" title="Internal defines." alt="" coords="44,5,221,32"/>
+<area shape="rect" id="node2" href="$cb__comdefs_8h.html" title="Internal defines." alt="" coords="81,80,184,107"/>
+<area shape="rect" id="node3" href="$cb__at__util_8h.html" title="Internal functions." alt="" coords="5,229,95,256"/>
+<area shape="rect" id="node4" href="$cb__status_8h.html" title="Internal defines." alt="" coords="87,155,178,181"/>
+<area shape="rect" id="node7" href="$cb__string_8h.html" title="Internal functions." alt="" coords="203,155,289,181"/>
+<area shape="rect" id="node5" href="$cb__tokenizer_8h.html" title="Internal functions." alt="" coords="119,229,226,256"/>
+<area shape="rect" id="node6" href="$test__tokenizer_8c.html" title="Tests the tokenizer of the URC parser." alt="" coords="115,304,230,331"/>
+</map>

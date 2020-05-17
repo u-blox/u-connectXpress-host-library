@@ -1,0 +1,10 @@
+<map id="ucxh_serial_mock.h" name="ucxh_serial_mock.h">
+<area shape="rect" id="node1" title=" " alt="" coords="397,5,535,32"/>
+<area shape="rect" id="node2" href="$test__at__peer_8c.html" title="Tests from chapter 5: AT&#45;commands UDDPRP and ucxhCOMMAND_writeDefaultRemotePeer() ." alt="" coords="5,80,111,107"/>
+<area shape="rect" id="node3" href="$test__at__wifi_8c.html" title="Tests from chapter 17, 10: AT&#45;commands UWSSTAT UNSTAT UWSCA UWSC and MODULE_writeWifiStationConfigura..." alt="" coords="135,80,234,107"/>
+<area shape="rect" id="node4" href="$test__getgeneral_8c.html" title="Tests from chapter 3: AT&#45;commands I, GMI, GMM, GMR, GSN ." alt="" coords="258,80,381,107"/>
+<area shape="rect" id="node5" href="$test__getsystem_8c.html" title="Tests from chapter 4: AT&#45;commands +UMLA ." alt="" coords="405,80,527,107"/>
+<area shape="rect" id="node6" href="$test__mock__ati9_8c.html" title="Hello, World / Issue AT command to mocked serial driver." alt="" coords="551,80,674,107"/>
+<area shape="rect" id="node7" href="$test__send_8c.html" title="Tests the functions used for building and sending AT commands." alt="" coords="698,80,789,107"/>
+<area shape="rect" id="node8" href="$ucxh__serial__mock_8c.html" title=" " alt="" coords="813,80,951,107"/>
+</map>
