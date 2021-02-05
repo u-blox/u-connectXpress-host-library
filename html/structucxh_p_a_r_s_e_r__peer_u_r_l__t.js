@@ -27,5 +27,11 @@ var structucxh_p_a_r_s_e_r__peer_u_r_l__t =
     [ "tcp", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#ac17bc21e7e9be4877572816f70353c3e", null ],
     [ "enable_reception_from_unicast_address", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a9f158038ceb9b5256df0ad8d75c05796", null ],
     [ "udp", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a72778e522e732442985c70b91426f6c9", null ],
+    [ "client", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#aa0e9333057371d28aa09fad888020203", null ],
+    [ "user", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a232f4d34b804c3278dd4a08c33d157e9", null ],
+    [ "password", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a5c4367f16335572ffbbce3278f5f6c47", null ],
+    [ "publish_topic", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a944549e892b64c1f0db8444abd9ff20b", null ],
+    [ "subscribe_topic", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a69bdab0093e583e236c5c0df1a5ef08a", null ],
+    [ "query", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a28c56e2f179c3e1a85673f2f2acbc6ad", null ],
     [ "mqtt", "structucxh_p_a_r_s_e_r__peer_u_r_l__t.html#a7fc989add2ae900acf8d2ec05e89130f", null ]
 ];

@@ -100,7 +100,11 @@ const char *ucxhPARSER_ascii7ToUnicode(uint8_t c) {
 void ucxhPARSER_printBuffer(const uint8_t *buffer, size_t length)
 {
   for (int i = 0; i < length; i++) {
-    printf("%s", ucxhPARSER_ascii7ToUnicode(buffer[i]));
+    #ifdef PRINTBUFFER_AS_HEX
+      printf("0x%02X%s", buffer[i], i < length -1 ? ", " : "");
+    #else
+      printf("%s", ucxhPARSER_ascii7ToUnicode(buffer[i]));
+    #endif
   }
 }
 
@@ -326,19 +330,17 @@ ucxhAT_response_t atParseResponse(const char *line)
           } else { \
             udprintf(UCXH_PARSER_TRACE_AT_PARSER, 1, "ucxh_parser: OK tried to finalize, but on" "() %s: FAILED (%s)\n", #URCname, #URCfullName); \
           } \
-          break; \
         } \
-      } while(0); \
-      \
-      do { \
-        if (URCcallbackOnOk != NULL && strcmp(lastCommand, #URCname) == 0) { /** Hopefully, this gets optimized out by the compiler if not needed, otherwize it'll just be dead code. */ \
+        if (URCcallbackOnOk != NULL && strcmp(lastCommand, "+" #URCname) == 0) { /** Hopefully, this gets optimized out by the compiler if not needed, otherwize it'll just be dead code. */ \
           if (ucxhPARSER_internalOn##URCname##Ok != NULL) { \
-            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 3, "ucxh_parser: OK to be handled by (internal callback) for +%s: (%s)\n", #URCname, #URCfullName); \
+            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 3, "ucxh_parser: OK to be handled by internal callback for +%s: (%s)\n", #URCname, #URCfullName); \
             int callback_result = ucxhPARSER_internalOn##URCname##Ok(NULL); \
-            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 4, "ucxh_parser: Callback returned %d for +%s: (%s)\n", callback_result, #URCname, #URCfullName); \
+            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 4, "ucxh_parser: Internal callback returned %d for +%s: (%s)\n", callback_result, #URCname, #URCfullName); \
           } else { \
-            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 2, "ucxh_parser: OK (internal callback) FAILED for +%s: (%s)\n", #URCname, #URCfullName); \
+            udprintf(UCXH_PARSER_TRACE_AT_PARSER, 2, "ucxh_parser: OK however - internal callback expected, but not registered for +%s: (%s)\n", #URCname, #URCfullName); \
           } \
+        } else { \
+          udprintf(UCXH_PARSER_TRACE_AT_PARSER, 5, "ucxh_parser: Not handling internal callback for +%s (%s) since URCcallbackOnOk=%d, lastCommand='%s'\n", #URCname, #URCfullName, URCcallbackOnOk, lastCommand); \
         } \
       } while (0);
       

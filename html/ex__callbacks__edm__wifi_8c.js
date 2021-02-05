@@ -1,10 +1,10 @@
 var ex__callbacks__edm__wifi_8c =
 [
-    [ "EXAMPLE_STATE_WAITING", "ex__callbacks__edm__wifi_8c.html#a5d76b81b0ad4c19007a781d4edb8181fa73da41f37ba319165cf566389a65463d", null ],
-    [ "EXAMPLE_STATE_STATION_UP", "ex__callbacks__edm__wifi_8c.html#a5d76b81b0ad4c19007a781d4edb8181fa17b26bad6e6668b928200fb8e62a18e8", null ],
-    [ "EXAMPLE_STATE_CONNECTED", "ex__callbacks__edm__wifi_8c.html#a5d76b81b0ad4c19007a781d4edb8181faf03e3abc7746a98469c6ba5897b2ed9e", null ],
-    [ "EXAMPLE_STATE_DISCONNECTED", "ex__callbacks__edm__wifi_8c.html#a5d76b81b0ad4c19007a781d4edb8181fa023eed333f7042c994c1f148cdfe9b7d", null ],
-    [ "EXAMPLE_STATE_QUIT", "ex__callbacks__edm__wifi_8c.html#a5d76b81b0ad4c19007a781d4edb8181fa2f9f26772f13249ebcc13d9edc1fb3e2", null ],
+    [ "EXAMPLE_STATE_WAITING", "ex__callbacks__edm__wifi_8c.html#aac34dfe6c6b73b43a4656c9dce041034a73da41f37ba319165cf566389a65463d", null ],
+    [ "EXAMPLE_STATE_STATION_UP", "ex__callbacks__edm__wifi_8c.html#aac34dfe6c6b73b43a4656c9dce041034a17b26bad6e6668b928200fb8e62a18e8", null ],
+    [ "EXAMPLE_STATE_CONNECTED", "ex__callbacks__edm__wifi_8c.html#aac34dfe6c6b73b43a4656c9dce041034af03e3abc7746a98469c6ba5897b2ed9e", null ],
+    [ "EXAMPLE_STATE_DISCONNECTED", "ex__callbacks__edm__wifi_8c.html#aac34dfe6c6b73b43a4656c9dce041034a023eed333f7042c994c1f148cdfe9b7d", null ],
+    [ "EXAMPLE_STATE_QUIT", "ex__callbacks__edm__wifi_8c.html#aac34dfe6c6b73b43a4656c9dce041034a2f9f26772f13249ebcc13d9edc1fb3e2", null ],
     [ "onExit", "ex__callbacks__edm__wifi_8c.html#af3d9cc20b2eb524417e93d20478f5798", null ],
     [ "onStartup", "ex__callbacks__edm__wifi_8c.html#a2271744711e64a09ea16a3898c246fc5", null ],
     [ "onConnectIpV4", "ex__callbacks__edm__wifi_8c.html#a6e7724c82a506be32dbf496207a0f59c", null ],
@@ -33,6 +33,6 @@ var ex__callbacks__edm__wifi_8c =
     [ "main", "ex__callbacks__edm__wifi_8c.html#ae66f6b31b5ad750f1fe042a706a4e3d4", null ],
     [ "lastChannel", "ex__callbacks__edm__wifi_8c.html#abdb3c528261f75ea21591ba2f1473aa6", null ],
     [ "numberOfConnections", "ex__callbacks__edm__wifi_8c.html#ae8ac806d68518036973f39d02c308409", null ],
-    [ "exampleState", "ex__callbacks__edm__wifi_8c.html#a147af10afaec4b88829e36a207e3668c", null ],
+    [ "exampleState", "ex__callbacks__edm__wifi_8c.html#ac4111319c1f66e554139a6a32f191df9", null ],
     [ "uses_default_peer", "ex__callbacks__edm__wifi_8c.html#a9e67d03b1187020e890819ff4879fa37", null ]
 ];

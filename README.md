@@ -13,6 +13,7 @@ The u-connectXpress AT protocol is implemented in the u-connectXpress software f
 * NINA-B1
 * NINA-B2
 * NINA-B31
+* NINA-B41
 * NINA-W13
 * NINA-W15
 * ODIN-W2
@@ -50,7 +51,7 @@ EDM between your NINA-W13, NINA-W14 or ODIN-W2 module and your PC.
 + Define the serial port to use in the `include/ucxh_config.h` file.
 + Configure your network and create a small server.
   This can be done either by connecting to your existing network, and using your computer as a server, or 
-  by using another NINA-W10/W13 or ODIN-W2 as WiFi AP and/or server.
+  by using another NINA-W10/W13 or ODIN-W2 as WiFi AP and/or server:
 
   * To use another u-blox module as WiFi AP and server, configure it to use
     IP number and gateway address `192.168.2.1`, and  enable a TCP server on port `12345`.
@@ -132,6 +133,37 @@ This example is a shows how to connect to a remote host using EDM:
  + Reboot
  
 \ref ex_callbacks_edm_wifi "More information ..." 
+
+### ex_wifi_pos
+
+This example shows how to scan for APs and request position from Thingstream WiFi positioning server using MQTT over TLS:
+
+ + Enter Extended Data Mode (EDM)
+ + Configure the module to connect to an AP
+ + Connect to a Thingstream WiFi positioning server at mqtt.thingstream.io using MQTT over TLS
+   and the credentials configured in ex_config.h
+ + Scan for nearby APs
+ + Publish the list of APs to the Thingstream WiFi positioning server using MQTT
+ + Obtain and print the position as determined by the Thingstream WiFi positioning server 
+
+\note In order for this example to work, you must obtain a Thingstream account
+and configure the flow for a WiFi positioning server. See the u-connectXpress IoT
+cloud connectivity application note at https://www.u-blox.com/en/docs/UBX-19010078 for
+more information.
+
+\ref ex_wifi_pos "More information ..." 
+
+### ex_http_get
+
+This example is a shows how to connect to a HTTP-server and issue a GET-command:
+
+ + Enter Extended Data Mode (EDM)
+ + Configure the module as a WiFi station
+ + Wait until the WiFi link is up and the module has received a DHCP IP address.
+ + Connect to a remote server.
+ + Reboot
+ 
+\ref ex_http_get "More information ..." 
 
 ## Porting
 
@@ -245,6 +277,25 @@ By default, it will
 * Execute all manual unit-tests
 * Re-generate all documentation (assuming `doxygen` and `graphwiz` is installed).
 
+
+## Revision history
+
+### 0.3 
+
+Initial public release.
+
+### 0.4
+
+New examples:
+ * ex_wifi_pos: Example shows how to scan for APs and request position from Thingstream WiFi positioning server using MQTT over TLS
+  \ref ex_wifi_pos "More information ..." 
+ * ex_http_get: Example shows how to connect to a HTTP-server and issue a GET-command
+   \ref ex_http_get "More information ..." 
+
+Fixed some bugs:
+ * EDM parse failed for incomingg packets > 128 bytes
+ * Potential buffer overflow in createUrlQueryString()
+ * Non-portable integer conversion in STRCPY2INT()
 
 ## Disclaimer
 Copyright (C) u-blox 

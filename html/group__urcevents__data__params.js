@@ -10,6 +10,7 @@ var group__urcevents__data__params =
     ] ],
     [ "ucxhURC_ipProtocol_t", "group__urcevents__data__params.html#gac74d3beb63961d6414c0ea4470e5b7fe", [
       [ "ucxhURC_IP_PROTOCOL_TCP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea5eeb08633ffc49347ef248402d994e85", null ],
-      [ "ucxhURC_IP_PROTOCOL_UDP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea76fc8e65985b8fd3a190fb194547a172", null ]
+      [ "ucxhURC_IP_PROTOCOL_UDP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea76fc8e65985b8fd3a190fb194547a172", null ],
+      [ "ucxhURC_IP_PROTOCOL_MQTT", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7feac8bc8dbf7562bc15d723bd2d0b6f1c6a", null ]
     ] ]
 ];

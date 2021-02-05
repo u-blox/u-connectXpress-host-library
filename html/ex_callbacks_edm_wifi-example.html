@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="ublox-logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">u-connectXpress host library
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">AT and EDM parser for u-blox shortrange standalone modules</div>
   </td>
@@ -89,14 +89,14 @@ $(document).ready(function(){initNavTree('ex_callbacks_edm_wifi-example.html',''
 </div><!--header-->
 <div class="contents">
 <p>Using EDM, configure WiFi and transmit TCP data as a WiFi Station Using EDM, configure WiFi and transmit TCP data as a WiFi Station </p>
-<h2><a class="anchor" id="autotoc_md25"></a>
+<h2><a class="anchor" id="autotoc_md30"></a>
 Introduction</h2>
 <p>This example is a complete example, which shows how to</p>
 <p>Start the Serial Port Configure the module to autoconnect to a server Enter EDM Wait for connection to server Send and receive data over EDM</p>
 <p>Once configured, the example is driven by events, which are handled by the callbacks <a class="el" href="ex__callbacks__edm__wifi_8c.html#a6e7724c82a506be32dbf496207a0f59c">onConnectIpV4()</a>, <a class="el" href="ex__callbacks__edm__wifi_8c.html#ab28ae1581a6be84ca672203be90ee23b" title="Prints the content of the data, asserting channel is -1.">onData()</a> and <a class="el" href="ex__callbacks__edm__wifi_8c.html#abce919d83064afe3e2e26899cc313567">onDisconnect()</a>.</p>
 <p>A number of other callbacks, are registered as well, but these are only done to show how AT URCs and responses are reported as callbacks, and that some that require more intelligence, such as <a class="el" href="ex__callbacks__edm__wifi_8c.html#a426c3e76219dfcea592b8c3721011dd9">onNetworkStationUp()</a> which indicates that the station has received its IP adress, also are reported as callbacks.</p>
 <p>Full source in <code><a class="el" href="ex__callbacks__edm__wifi_8c.html">examples/ex_callbacks_edm_wifi.c</a></code></p>
-<h2><a class="anchor" id="autotoc_md26"></a>
+<h2><a class="anchor" id="autotoc_md31"></a>
 Typical response</h2>
 <pre class="fragment">Opening serial port...
 Entering AT mode (in case NINA was in DATA mode)...

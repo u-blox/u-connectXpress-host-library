@@ -74,6 +74,7 @@ Component:  u-connectXpress Host Library
  * + 2: Also display AT URC, unless a callback has been registered.
  * + 3: Also dispaly AT URC to be handled by callback
  * + 4: Also dispaly tokens as parsed and returncodes from callbacks
+ * + 5: Also display if internal callbacks aren't invoked
  */
 #define UCXH_PARSER_TRACE_AT_PARSER 1
 
@@ -166,7 +167,7 @@ Component:  u-connectXpress Host Library
  * On windows, use the format `"\\\\.\\COM44"`
  */
 #ifndef UCXH_PARSER_COMPORT
-#define UCXH_PARSER_COMPORT "\\\\.\\COM14"
+#define UCXH_PARSER_COMPORT "\\\\.\\COM20"
 #endif
 
 /** @} */

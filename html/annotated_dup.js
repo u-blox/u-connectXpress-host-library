@@ -27,6 +27,7 @@ var annotated_dup =
     [ "ucxhPARSER_urcTypeCodeIdentificationEvent_t", "structucxh_p_a_r_s_e_r__urc_type_code_identification_event__t.html", "structucxh_p_a_r_s_e_r__urc_type_code_identification_event__t" ],
     [ "ucxhPARSER_urcWifiLinkConnectedEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_link_connected_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_link_connected_event__t" ],
     [ "ucxhPARSER_urcWifiLinkDisconnectedEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_link_disconnected_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_link_disconnected_event__t" ],
+    [ "ucxhPARSER_urcWifiScanEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_scan_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_scan_event__t" ],
     [ "ucxhPARSER_urcWifiStationConfigurationEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_station_configuration_event__t.html", null ],
     [ "ucxhPARSER_urcWifiStationStatusEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_station_status_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_station_status_event__t" ],
     [ "ucxhPARSER_urcXXXEvent_t", "structucxh_p_a_r_s_e_r__urc_x_x_x_event__t.html", "structucxh_p_a_r_s_e_r__urc_x_x_x_event__t" ],

@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="ublox-logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">u-connectXpress host library
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">AT and EDM parser for u-blox shortrange standalone modules</div>
   </td>
@@ -122,6 +122,9 @@ $(document).ready(function(){initNavTree('group__directat.html',''); initResizab
 <tr class="memitem:gadfa71c2d6fdae6ccdfe7e6e739698a01"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__directat.html#gadfa71c2d6fdae6ccdfe7e6e739698a01">ucxhCOMMAND_connectPeer</a> (<a class="el" href="structucxh_p_a_r_s_e_r__peer_u_r_l__t.html">ucxhPARSER_peerURL_t</a> *pUrl)</td></tr>
 <tr class="memdesc:gadfa71c2d6fdae6ccdfe7e6e739698a01"><td class="mdescLeft">&#160;</td><td class="mdescRight">Connect Peer.  <a href="group__directat.html#gadfa71c2d6fdae6ccdfe7e6e739698a01">More...</a><br /></td></tr>
 <tr class="separator:gadfa71c2d6fdae6ccdfe7e6e739698a01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ee4602417a1b463711ecae9893f8765"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__directat.html#ga5ee4602417a1b463711ecae9893f8765">ucxhCOMMAND_WifiScan</a> (void)</td></tr>
+<tr class="memdesc:ga5ee4602417a1b463711ecae9893f8765"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wifi Scan.  <a href="group__directat.html#ga5ee4602417a1b463711ecae9893f8765">More...</a><br /></td></tr>
+<tr class="separator:ga5ee4602417a1b463711ecae9893f8765"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9b4bc385e3a7b47281773f37e6a5939f"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__directat.html#ga9b4bc385e3a7b47281773f37e6a5939f">ucxhCOMMAND_writeWifiStationConfiguration</a> (const <a class="el" href="structucxh_p_a_r_s_e_r__wifi_station_configuration_param__t.html">ucxhPARSER_wifiStationConfigurationParam_t</a> *param)</td></tr>
 <tr class="memdesc:ga9b4bc385e3a7b47281773f37e6a5939f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Define and write a configuration parameter to RAM for the WiFi Station.  <a href="group__directat.html#ga9b4bc385e3a7b47281773f37e6a5939f">More...</a><br /></td></tr>
 <tr class="separator:ga9b4bc385e3a7b47281773f37e6a5939f"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -436,6 +439,30 @@ To write several parameters at once (recommended), use <a class="el" href="group
 <p>Connect Peer. </p>
 <dl class="section user"><dt>Related AT-command:</dt><dd><ul>
 <li>AT+UDCP </li>
+</ul>
+</dd></dl>
+
+</div>
+</div>
+<a id="ga5ee4602417a1b463711ecae9893f8765"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ee4602417a1b463711ecae9893f8765">&#9670;&nbsp;</a></span>ucxhCOMMAND_WifiScan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool ucxhCOMMAND_WifiScan </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Wifi Scan. </p>
+<dl class="section user"><dt>Related AT-command:</dt><dd><ul>
+<li>AT+UWSCAN </li>
 </ul>
 </dd></dl>
 

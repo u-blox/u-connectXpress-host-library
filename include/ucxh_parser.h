@@ -25,6 +25,7 @@ Component:  u-connectXpress Host Library
 #ifndef _UCXH_AT_PARSER_H
 #define _UCXH_AT_PARSER_H
 
+#include <inttypes.h>
 #include <stdbool.h> 
 #include <time.h>
 
@@ -107,8 +108,16 @@ void ucxhPARSER_setOnCommandSentDone(int (*callback)(bool success, void *userdat
 *  @{
 */
 
+/**
+ * \def PRINTBUFFER_AS_HEX
+ * If defined, ucxhPARSER_printBuffer() will output a comma-separated hex sequence instead of printable.
+ */
+ //#define PRINTBUFFER_AS_HEX
+
 /** Print a binary buffer as characters, with some common characters (CR/LF/TAB) printed as unicode.
  * Unprintable characters are printed as unicode.
+ * Suitable for debug printouts of buffers not NUL-terminated.
+ * OR: If PRINTBUFFER_AS_HEX, all output is a comma-separated hex sequence.
  * Does not add any CR
  * @param buffer Binary buffer
  * @param length Number of bytes in buffer
@@ -194,7 +203,7 @@ do { \
 #define STRCPY2INT(dst, src, ok) \
 do { \
     int32_t _dst = 0; \
-    *(ok) = (bool) (sscanf(src, "%ld", &_dst) == 1); \
+    *(ok) = (bool) (sscanf(src, "%" SCNd32, &_dst) == 1); \
     if (*(ok)) { \
         dst = _dst; \
     } \
@@ -221,7 +230,7 @@ do { \
 } while (0)
 
 
-/** Check the validity of hte parameters in the `ppParams` array.
+/** Check the validity of the parameters in the `ppParams` array.
  * Optionally, each parameter is printed.
  * * The number of parameters `numParams` must be at least `minParams`.
  *   If not, the function will return `ucxhURC_PARSE_RESULT_ERROR`.

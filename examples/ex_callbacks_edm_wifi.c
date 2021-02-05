@@ -236,8 +236,9 @@ int onConnectIpV4(const ucxhEDM_connectionEventIPv4_t *event)
     event->remoteAddress[2],
     event->remoteAddress[3],
     event->remotePort,
-      (event->protocol == ucxhEDM_IP_PROTOCOL_TCP ? "TCP" : 
-      (event->protocol == ucxhEDM_IP_PROTOCOL_UDP ? "UDP" : "UNKNOWN")),
+      (event->protocol == ucxhEDM_IP_PROTOCOL_TCP ? "TCP" : // NB: This example only uses TCP
+      (event->protocol == ucxhEDM_IP_PROTOCOL_UDP ? "UDP" : 
+      (event->protocol == ucxhEDM_IP_PROTOCOL_MQTT ? "MQTT" : "UNKNOWN"))),
     lastChannel
   );
 

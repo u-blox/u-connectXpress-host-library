@@ -92,6 +92,7 @@ typedef enum {
 typedef enum {
     ucxhEDM_IP_PROTOCOL_TCP,
     ucxhEDM_IP_PROTOCOL_UDP,
+    ucxhEDM_IP_PROTOCOL_MQTT,
     ucxhEDM_IP_PROTOCOL_INVALID,
 } ucxhEDM_ipProtocol_t;
 

@@ -7,9 +7,9 @@ var structucxh_p_a_r_s_e_r__urc_peer_connected_event__t =
     [ "protocol", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a59b6076a0ab4c730cb0da9e3bd761a42", null ],
     [ "local_address", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#aab804638ee2ab82aeb71345df9aacf01", null ],
     [ "remote_address", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#ad9c86de592193c32c347a845275fdcf6", null ],
-    [ "ipv4_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a790c0041d711a354592d2cec815e4fa1", null ],
+    [ "ipv4_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a381ef638775ba5a9df34530b6654fdd0", null ],
     [ "local_address", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a46e541dc0a2ab5052659d47fd7d25db8", null ],
     [ "remote_address", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a5b08eb73475b5d90a908f69df7349945", null ],
-    [ "ipv6_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a920c5eb08df9af6b383f4d31246ca8cd", null ],
-    [ "bluetooth_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a32b61eeb07217026292d736c41924818", null ]
+    [ "ipv6_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#ac9d581bcb8dcfc371773d9c1ab94f4a5", null ],
+    [ "bluetooth_peer", "structucxh_p_a_r_s_e_r__urc_peer_connected_event__t.html#a45907503a3da5a665ff3a4bd61f39b5e", null ]
 ];

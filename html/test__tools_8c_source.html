@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="ublox-logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">u-connectXpress host library
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">AT and EDM parser for u-blox shortrange standalone modules</div>
   </td>
@@ -170,7 +170,7 @@ $(document).ready(function(){initNavTree('test__tools_8c_source.html',''); initR
 <div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;  assert(channel == -1); <span class="comment">// -1 when using datamode, otherwize EDM channel</span></div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
 <div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;  printf(<span class="stringliteral">&quot;test_tools.c/onData: Channel %d: Data event of %d bytes: &#39;&quot;</span>, channel, length);</div>
-<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="group__utility.html#ga8c3e5875915fc54562b5869711ec7a38">ucxhPARSER_printBuffer</a>(data, length);</div>
+<div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;  <a class="code" href="ucxh__parser_8h.html#a8c3e5875915fc54562b5869711ec7a38">ucxhPARSER_printBuffer</a>(data, length);</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;  printf(<span class="stringliteral">&quot;&#39;\n&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160; </div>
 <div class="line"><a name="l00110"></a><span class="lineno">  110</span>&#160;  <span class="comment">//... Handle the incoming data here...  </span></div>
@@ -204,6 +204,7 @@ $(document).ready(function(){initNavTree('test__tools_8c_source.html',''); initR
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <div class="ttc" id="atest__tools_8h_html"><div class="ttname"><a href="test__tools_8h.html">test_tools.h</a></div></div>
+<div class="ttc" id="aucxh__parser_8h_html_a8c3e5875915fc54562b5869711ec7a38"><div class="ttname"><a href="ucxh__parser_8h.html#a8c3e5875915fc54562b5869711ec7a38">ucxhPARSER_printBuffer</a></div><div class="ttdeci">void ucxhPARSER_printBuffer(const uint8_t *buffer, size_t length)</div></div>
 <div class="ttc" id="acb__comdefs_8h_html_a176ce9d516a2aa4f3903053326185da3"><div class="ttname"><a href="cb__comdefs_8h.html#a176ce9d516a2aa4f3903053326185da3">ELEMENTS_OF</a></div><div class="ttdeci">#define ELEMENTS_OF(_array)</div><div class="ttdef"><b>Definition:</b> <a href="cb__comdefs_8h_source.html#l00142">cb_comdefs.h:142</a></div></div>
 <div class="ttc" id="aucxh__serial__mock_8h_html"><div class="ttname"><a href="ucxh__serial__mock_8h.html">ucxh_serial_mock.h</a></div></div>
 <div class="ttc" id="acb__comdefs_8h_html_a070d2ce7b6bb7e5c05602aa8c308d0c4"><div class="ttname"><a href="cb__comdefs_8h.html#a070d2ce7b6bb7e5c05602aa8c308d0c4">NULL</a></div><div class="ttdeci">#define NULL</div><div class="ttdef"><b>Definition:</b> <a href="cb__comdefs_8h_source.html#l00050">cb_comdefs.h:50</a></div></div>
@@ -219,7 +220,6 @@ $(document).ready(function(){initNavTree('test__tools_8c_source.html',''); initR
 <div class="ttc" id="aex__config_8h_html"><div class="ttname"><a href="ex__config_8h.html">ex_config.h</a></div></div>
 <div class="ttc" id="agroup__serial_html_gaf600c1972275c77dbd5ed9d9435623cc"><div class="ttname"><a href="group__serial.html#gaf600c1972275c77dbd5ed9d9435623cc">ucxhSERIAL_close</a></div><div class="ttdeci">void ucxhSERIAL_close(void)</div><div class="ttdef"><b>Definition:</b> <a href="ucxh__serial__mock_8c_source.html#l00216">ucxh_serial_mock.c:216</a></div></div>
 <div class="ttc" id="agroup__busywaits_html_gaee2e48f6ea5776b51724acf62d4a8c8f"><div class="ttname"><a href="group__busywaits.html#gaee2e48f6ea5776b51724acf62d4a8c8f">ucxhPARSER_wait</a></div><div class="ttdeci">bool ucxhPARSER_wait(int32_t numSeconds)</div></div>
-<div class="ttc" id="agroup__utility_html_ga8c3e5875915fc54562b5869711ec7a38"><div class="ttname"><a href="group__utility.html#ga8c3e5875915fc54562b5869711ec7a38">ucxhPARSER_printBuffer</a></div><div class="ttdeci">void ucxhPARSER_printBuffer(const uint8_t *buffer, size_t length)</div></div>
 <div class="ttc" id="aucxh__serial_8h_html"><div class="ttname"><a href="ucxh__serial_8h.html">ucxh_serial.h</a></div></div>
 <div class="ttc" id="atest__tools_8h_html_a80e28424edd13cb2888c95d85d2e7541"><div class="ttname"><a href="test__tools_8h.html#a80e28424edd13cb2888c95d85d2e7541">return2Ok</a></div><div class="ttdeci">void return2Ok(void)</div><div class="ttdoc">Next read will return OK twice, then nothing.</div></div>
 <!-- start footer part -->

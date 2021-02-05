@@ -124,6 +124,9 @@ ucxhEDM_ipProtocol_t getIpProtocol(char value)
         case 0x01:
             protocol = ucxhEDM_IP_PROTOCOL_UDP;
             break;
+        case 0x02:
+            protocol = ucxhEDM_IP_PROTOCOL_MQTT;
+            break;
         default:
             protocol = ucxhEDM_IP_PROTOCOL_INVALID;
             break;
@@ -137,7 +140,7 @@ int edmParse(char* pInData, unsigned int size, ucxhEDM_event_t* pEventData, unsi
     int error = ucxhEDM_OK;
     unsigned int payload_size;
     unsigned int used = 0;
-    char* pPackedHead = pInData;
+    uint8_t* pPackedHead = (uint8_t*)pInData;
 
     if (pPackedHead == NULL || size < ucxhEDM_MIN_SIZE) {
         *pConsumed = 0;
@@ -145,7 +148,7 @@ int edmParse(char* pInData, unsigned int size, ucxhEDM_event_t* pEventData, unsi
     }
 
     for (used = 0; used < size; used++) {
-        if (*(pPackedHead + used) == (char)ucxhEDM_HEAD) {
+        if (*(pPackedHead + used) == ucxhEDM_HEAD) {
             pPackedHead += used;
             break;
         }
@@ -163,7 +166,7 @@ int edmParse(char* pInData, unsigned int size, ucxhEDM_event_t* pEventData, unsi
         return ucxhEDM_ERROR_INCOMPLETE;
     }
 
-    if (*(pPackedHead + payload_size + ucxhEDM_HEAD_SIZE + ucxhEDM_SIZE_SIZE) != (char)ucxhEDM_TAIL) {
+    if (*(pPackedHead + payload_size + ucxhEDM_HEAD_SIZE + ucxhEDM_SIZE_SIZE) != ucxhEDM_TAIL) {
         *pConsumed = used + ucxhEDM_HEAD_SIZE + ucxhEDM_SIZE_SIZE + payload_size + ucxhEDM_TAIL_SIZE;
         return ucxhEDM_ERROR_SIZE;
     }
@@ -210,13 +213,13 @@ int edmParse(char* pInData, unsigned int size, ucxhEDM_event_t* pEventData, unsi
             break;
         case ucxhEDM_EVENT_DATA:
             pEventData->params.dataEvent.hChannel = *(pPackedHead + 5);
-            pEventData->params.dataEvent.pData = pPackedHead + 6;
+            pEventData->params.dataEvent.pData = (char*)pPackedHead + 6;
             payload_size = ((*(pPackedHead + 1) & ucxhEDM_SIZE_FILTER) << 8) + *(pPackedHead + 2);
             pEventData->params.dataEvent.length = payload_size - 3;
             used += payload_size + 4;
             break;
         case ucxhEDM_EVENT_AT:
-            pEventData->params.atEvent.pData = pPackedHead + 5;
+            pEventData->params.atEvent.pData = (char*)pPackedHead + 5;
             payload_size = ((*(pPackedHead + 1) & ucxhEDM_SIZE_FILTER) << 8) + *(pPackedHead + 2);
             pEventData->params.atEvent.length = payload_size - 2;
             used += payload_size + 4;
