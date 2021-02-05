@@ -11,7 +11,7 @@ var ucxh__parser_8h =
     [ "atParseResponse", "group__internal.html#ga3ea523311f50bfc3d2267a10bd21722b", null ],
     [ "atGetLastResponse", "group__internal.html#ga5d970252269432daa81285c216921770", null ],
     [ "ucxhPARSER_setOnCommandSentDone", "group__internal.html#ga84eed6e29ef48fee6773e8a19624668c", null ],
-    [ "ucxhPARSER_printBuffer", "group__utility.html#ga8c3e5875915fc54562b5869711ec7a38", null ],
+    [ "ucxhPARSER_printBuffer", "ucxh__parser_8h.html#a8c3e5875915fc54562b5869711ec7a38", null ],
     [ "ucxhPARSER_ascii7ToUnicode", "ucxh__parser_8h.html#ac1368e459030b9fb56228b8f5f72ed14", null ],
     [ "ucxhPARSER_checkParams", "ucxh__parser_8h.html#a4b558d327036b9c50973f61f17d14890", null ],
     [ "ucxhPARSER_setOnURCParsed", "group__parsercallbacks.html#ga3d9d53a6926208b98c74b70b10b23258", null ],

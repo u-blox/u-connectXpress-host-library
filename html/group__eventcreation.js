@@ -18,5 +18,6 @@ var group__eventcreation =
     [ "onUUWLD_createEvent", "group__eventcreation.html#gac262239c5bde54a00a268424ad22335f", null ],
     [ "onUUWLE_createEvent", "group__eventcreation.html#ga2998ebee508c62d5feb9bcdfd092b470", null ],
     [ "onUWSC_createEvent", "group__eventcreation.html#ga27293be6ddf8b96a24be963dc2e62d4e", null ],
+    [ "onUWSCAN_createEvent", "group__eventcreation.html#ga46bcf79df46ab0ec59fc7d1654e89c9a", null ],
     [ "onUWSSTAT_createEvent", "group__eventcreation.html#ga86a955ecdc933306a3ace164f114edd4", null ]
 ];

@@ -11,5 +11,6 @@ var group__directat =
     [ "ucxhCOMMAND_readLocalAddress", "group__directat.html#ga11ba05156966de45e538a3eada68971c", null ],
     [ "ucxhCOMMAND_writeDefaultRemotePeer", "group__directat.html#gab2c94ee405d145f5ec284cc4f4db86ed", null ],
     [ "ucxhCOMMAND_connectPeer", "group__directat.html#gadfa71c2d6fdae6ccdfe7e6e739698a01", null ],
+    [ "ucxhCOMMAND_WifiScan", "group__directat.html#ga5ee4602417a1b463711ecae9893f8765", null ],
     [ "ucxhCOMMAND_readNetworkStatus", "group__directat.html#gaf75b1527ca8a15e707375c8761f4a5b8", null ]
 ];

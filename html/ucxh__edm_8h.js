@@ -46,6 +46,7 @@ var ucxh__edm_8h =
     [ "ucxhEDM_ipProtocol_t", "ucxh__edm_8h.html#aae196ca5d9ba2296cb750e3bd41131c9", [
       [ "ucxhEDM_IP_PROTOCOL_TCP", "ucxh__edm_8h.html#aae196ca5d9ba2296cb750e3bd41131c9a5a439fc7d9cec9b3f22b63969e9eeeaf", null ],
       [ "ucxhEDM_IP_PROTOCOL_UDP", "ucxh__edm_8h.html#aae196ca5d9ba2296cb750e3bd41131c9aad14d164d92ae855fbc86d3a42235573", null ],
+      [ "ucxhEDM_IP_PROTOCOL_MQTT", "ucxh__edm_8h.html#aae196ca5d9ba2296cb750e3bd41131c9a87b9d8b48bf10d9507485f3e35fa6bdb", null ],
       [ "ucxhEDM_IP_PROTOCOL_INVALID", "ucxh__edm_8h.html#aae196ca5d9ba2296cb750e3bd41131c9aff7488caaffd80244c9476a150b4fe1c", null ]
     ] ],
     [ "ucxhEDM_eventType_t", "ucxh__edm_8h.html#a430f2fe25330181e477837242e86e344", [

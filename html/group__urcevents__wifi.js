@@ -7,5 +7,6 @@ var group__urcevents__wifi =
     [ "ucxhPARSER_urcWifiLinkDisconnectedEvent_t", "group__urcevents__wifi.html#ga0d580fffce62e41fff2cc876f6daf985", null ],
     [ "ucxhPARSER_urcWifiLinkConnectedEvent_t", "group__urcevents__wifi.html#ga69e3d2797f97e8db41acadacb7421737", null ],
     [ "ucxhPARSER_urcWifiStationConfigurationEvent_t", "group__urcevents__wifi.html#ga23788f14dad6a85ae45d6f469288186e", null ],
-    [ "ucxhPARSER_urcWifiStationStatusEvent_t", "group__urcevents__wifi.html#ga0d056896c23166a665e0c9f185fa426a", null ]
+    [ "ucxhPARSER_urcWifiStationStatusEvent_t", "group__urcevents__wifi.html#ga0d056896c23166a665e0c9f185fa426a", null ],
+    [ "ucxhPARSER_urcWifiScanEvent_t", "group__urcevents__wifi.html#gabb663a258e34a4266da53ed0636b431c", null ]
 ];

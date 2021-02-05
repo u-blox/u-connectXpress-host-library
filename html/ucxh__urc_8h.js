@@ -13,6 +13,7 @@ var ucxh__urc_8h =
     [ "ucxhPARSER_urcWifiLinkConnectedEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_link_connected_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_link_connected_event__t" ],
     [ "ucxhPARSER_urcWifiStationConfigurationEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_station_configuration_event__t.html", null ],
     [ "ucxhPARSER_urcWifiStationStatusEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_station_status_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_station_status_event__t" ],
+    [ "ucxhPARSER_urcWifiScanEvent_t", "structucxh_p_a_r_s_e_r__urc_wifi_scan_event__t.html", "structucxh_p_a_r_s_e_r__urc_wifi_scan_event__t" ],
     [ "ucxhPARSER_urcPeerDisconnectedEvent_t", "structucxh_p_a_r_s_e_r__urc_peer_disconnected_event__t.html", "structucxh_p_a_r_s_e_r__urc_peer_disconnected_event__t" ],
     [ "ucxhPARSER_urcNetworkDownEvent_t", "structucxh_p_a_r_s_e_r__urc_network_down_event__t.html", "structucxh_p_a_r_s_e_r__urc_network_down_event__t" ],
     [ "ucxhPARSER_urcNetworkUpEvent_t", "structucxh_p_a_r_s_e_r__urc_network_up_event__t.html", "structucxh_p_a_r_s_e_r__urc_network_up_event__t" ],
@@ -34,6 +35,7 @@ var ucxh__urc_8h =
     [ "ucxhAT_BtUuid_MAX_LEN", "ucxh__urc_8h.html#ab7381d223b98d9d5f1173932d13a27d7", null ],
     [ "ucxhAT_urlHost_MAX_LEN", "ucxh__urc_8h.html#aa713fbee2ce598d48dc6b44c935e73d4", null ],
     [ "ucxhAT_certificateInternalNameStr_MAX_LEN", "ucxh__urc_8h.html#a17fb82473dc66589e1319e477aec5d11", null ],
+    [ "ucxhAT_mqttParameterStr_MAX_LEN", "ucxh__urc_8h.html#a06f9d8fff7441e549fbe154b45acc056", null ],
     [ "ucxhPARSER_WIFI_STATION_STATUS_RSSI_DISCONNECTED", "ucxh__urc_8h.html#aef5e8fc2e71a5aee8d9e141da5a3da02", null ],
     [ "ucxhAT_ipV6GenericAddr_MAX", "group__urcevents__data__params.html#ga85e0d98f96f050afc13f21c9a45f4126", null ],
     [ "_XMACRO", "ucxh__urc_8h.html#abd4d85d753a4b16cdcaf711e39fea684", null ],
@@ -68,6 +70,7 @@ var ucxh__urc_8h =
     [ "ucxhAT_IpPortNumber", "ucxh__urc_8h.html#a2dfef908df9a674a0ec8dccf199fc7d7", null ],
     [ "ucxhAT_TlsVersion_t", "ucxh__urc_8h.html#ac8e121a83821eb2452d804c259b7b9a8", null ],
     [ "ucxhAT_certificateInternalNameStr_t", "ucxh__urc_8h.html#a11b5de6add10362fe10e096973a1ee2b", null ],
+    [ "ucxhAT_mqttParameterStr_t", "ucxh__urc_8h.html#a6abaf037df1387cd1a457bb4fc9222d7", null ],
     [ "ucxhPARSER_peerURL_t", "ucxh__urc_8h.html#aa260513a3ed5c4cec4f7e5ecde6c42bc", null ],
     [ "ucxhPARSER_defaultRemotePeerParam_t", "ucxh__urc_8h.html#afb5c859142b7b8fc2005e28547dbb6e2", null ],
     [ "ucxhPARSER_hardwareInterfaceId_t", "group__urcevents__system__params.html#ga42c6904474cc07e874c96b62d637d3c3", null ],
@@ -95,6 +98,7 @@ var ucxh__urc_8h =
     [ "ucxhPARSER_urcWifiLinkConnectedEvent_t", "group__urcevents__wifi.html#ga69e3d2797f97e8db41acadacb7421737", null ],
     [ "ucxhPARSER_urcWifiStationConfigurationEvent_t", "group__urcevents__wifi.html#ga23788f14dad6a85ae45d6f469288186e", null ],
     [ "ucxhPARSER_urcWifiStationStatusEvent_t", "group__urcevents__wifi.html#ga0d056896c23166a665e0c9f185fa426a", null ],
+    [ "ucxhPARSER_urcWifiScanEvent_t", "group__urcevents__wifi.html#gabb663a258e34a4266da53ed0636b431c", null ],
     [ "ucxhURC_peerType_t", "group__urcevents__data__params.html#gad905f8de3e0e0cb30f3f1f61e85dcfca", null ],
     [ "ucxhURC_ipProtocol_t", "group__urcevents__data__params.html#ga4fe0823fe61902f905b35b96f70d1b40", null ],
     [ "ucxhPARSER_urcPeerConnectedEvent_t", "group__urcevents__data.html#gae6a357883ecdb8da3b8a684fb4ca6bab", null ],
@@ -131,7 +135,8 @@ var ucxh__urc_8h =
     ] ],
     [ "ucxhPARSER_peerURLScheme_t", "ucxh__urc_8h.html#a0848a614eb685912278346f924022da6", [
       [ "ucxhPARSER_PEER_URL_SCHEME_UNDEFINED", "ucxh__urc_8h.html#a0848a614eb685912278346f924022da6a24e57a253e96d1a482f2acb65824eef9", null ],
-      [ "ucxhPARSER_PEER_URL_SCHEME_TCP", "ucxh__urc_8h.html#a0848a614eb685912278346f924022da6ab1b9343086515ccbca136a319a3d00e5", null ]
+      [ "ucxhPARSER_PEER_URL_SCHEME_TCP", "ucxh__urc_8h.html#a0848a614eb685912278346f924022da6ab1b9343086515ccbca136a319a3d00e5", null ],
+      [ "ucxhPARSER_PEER_URL_SCHEME_MQTT", "ucxh__urc_8h.html#a0848a614eb685912278346f924022da6a5c1dc16b761330c6b059626cab3ec9cf", null ]
     ] ],
     [ "ucxhPARSER_BleRemoteRole_t", "ucxh__urc_8h.html#a0b278c9b74322f5ae5aeef141bdc47e5", [
       [ "ucxhPARSER_BLE_REMOTE_ROLE_PERIPHERAL", "ucxh__urc_8h.html#a0b278c9b74322f5ae5aeef141bdc47e5a9878d3d83226454fb63a555405e2b3f1", null ],
@@ -182,7 +187,8 @@ var ucxh__urc_8h =
     ] ],
     [ "ucxhURC_ipProtocol_t", "group__urcevents__data__params.html#gac74d3beb63961d6414c0ea4470e5b7fe", [
       [ "ucxhURC_IP_PROTOCOL_TCP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea5eeb08633ffc49347ef248402d994e85", null ],
-      [ "ucxhURC_IP_PROTOCOL_UDP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea76fc8e65985b8fd3a190fb194547a172", null ]
+      [ "ucxhURC_IP_PROTOCOL_UDP", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7fea76fc8e65985b8fd3a190fb194547a172", null ],
+      [ "ucxhURC_IP_PROTOCOL_MQTT", "ucxh__urc_8h.html#gac74d3beb63961d6414c0ea4470e5b7feac8bc8dbf7562bc15d723bd2d0b6f1c6a", null ]
     ] ],
     [ "ucxhURC_t", "group__autogenerated.html#ga1d7d80f6cae90090c604ce5615f6f064", [
       [ "uxchURC_LAST", "group__autogenerated.html#gga1d7d80f6cae90090c604ce5615f6f064aafe2c22bcb47e898b9edcbc2895b0246", null ],
@@ -198,6 +204,7 @@ var ucxh__urc_8h =
     [ "ucxhCOMMAND_readLocalAddress", "group__directat.html#ga11ba05156966de45e538a3eada68971c", null ],
     [ "ucxhCOMMAND_writeDefaultRemotePeer", "group__directat.html#gab2c94ee405d145f5ec284cc4f4db86ed", null ],
     [ "ucxhCOMMAND_connectPeer", "group__directat.html#gadfa71c2d6fdae6ccdfe7e6e739698a01", null ],
+    [ "ucxhCOMMAND_WifiScan", "group__directat.html#ga5ee4602417a1b463711ecae9893f8765", null ],
     [ "ucxhPARSER_setOnXXX", "group__autogenerated.html#gab90dcd73cc916fda9f699e8d06e6318a", null ],
     [ "ucxhPARSER_setOnXXXOk", "group__autogenerated.html#gad5b2febba2dbf74fad9eb8a728c26673", null ],
     [ "ucxhPARSER_setOnXXXError", "group__autogenerated.html#gac940a6334ca1ea7cf554c06f3798e961", null ],

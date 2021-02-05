@@ -235,9 +235,9 @@ bool createUrlQueryString(ucxhPARSER_peerURL_t *pUrl)
             }
 
             length += snprintf(buffer, sizeof(buffer)-length-1, "tcp://%s%s%s:%u/", pre_domain, pUrl->tcp.domain, post_domain, pUrl->tcp.remote_port);
-            buffer[sizeof(buffer)-1] = '\n';
+            buffer[sizeof(buffer)-1] = '\0';
             if (length >= sizeof(buffer)-1) {
-                udprintf(UCXH_PARSER_TRACE_AT, 1, "createUrlQueryString: URL too long (%d chars, max allowed %d chars: '%s'", length, sizeof(buffer), buffer);
+                udprintf(UCXH_PARSER_TRACE_AT, 1, "createUrlQueryString: TCP URL too long (%d chars, max allowed %d chars: '%s'", length, sizeof(buffer), buffer);
                 return false;
             }
 
@@ -274,6 +274,34 @@ bool createUrlQueryString(ucxhPARSER_peerURL_t *pUrl)
             if (pUrl->tcp.query.cert[0] != '\0')      {success &= addQueryString     ("cert",         pUrl->tcp.query.cert); }
             if (pUrl->tcp.query.priv_key[0] != '\0')  {success &= addQueryString     ("privKey",      pUrl->tcp.query.priv_key); }
             if (pUrl->tcp.query.encr != 0)            {success &= addQueryUnsignedInt("encr",         pUrl->tcp.query.encr); }
+            
+            break;
+        }
+
+        case ucxhPARSER_PEER_URL_SCHEME_MQTT: {
+            const char *pre_domain = "";
+            const char *post_domain = "";
+
+            if (strchr(pUrl->mqtt.domain, ':') != NULL) {
+                pre_domain = "[";
+                post_domain = "]";
+            }
+
+            length += snprintf(buffer, sizeof(buffer)-length-1, "mqtt://%s%s%s:%u/", pre_domain, pUrl->mqtt.domain, post_domain, pUrl->mqtt.remote_port);
+            buffer[sizeof(buffer)-1] = '\0';
+            if (length >= sizeof(buffer)-1) {
+                udprintf(UCXH_PARSER_TRACE_AT, 1, "createUrlQueryString: MQTT URL too long (%d chars, max allowed %d chars: '%s'", length, sizeof(buffer), buffer);
+                return false;
+            }
+
+            success &= addQueryString(buffer, NULL);
+
+            if (pUrl->mqtt.query.client[0] != '\0')             {success &= addQueryString     ("client",       pUrl->mqtt.query.client); }
+            if (pUrl->mqtt.query.user[0] != '\0')               {success &= addQueryString     ("user",         pUrl->mqtt.query.user); }
+            if (pUrl->mqtt.query.password[0] != '\0')           {success &= addQueryString     ("passwd",       pUrl->mqtt.query.password); }
+            if (pUrl->mqtt.query.publish_topic[0] != '\0')      {success &= addQueryString     ("pt",           pUrl->mqtt.query.publish_topic); }
+            if (pUrl->mqtt.query.subscribe_topic[0] != '\0')    {success &= addQueryString     ("st",           pUrl->mqtt.query.subscribe_topic); }
+            if (pUrl->mqtt.query.encr != 0)                     {success &= addQueryUnsignedInt("encr",         pUrl->mqtt.query.encr); }
             
             break;
         }
@@ -342,6 +370,12 @@ bool ucxhCOMMAND_connectPeer(ucxhPARSER_peerURL_t *pUrl)
     return ucxhPARSER_sendBuiltCommand();
 }
 
+bool ucxhCOMMAND_WifiScan(void)
+{
+    ucxhPARSER_buildSetCmd("+UWSCAN");
+    return ucxhPARSER_sendBuiltCommand();
+}
+
 
 ucxhURC_parseResult_t onUWSC_createEvent(uint8_t numParams, const char *ppParams[], ucxhPARSER_urcWifiStationConfigurationEvent_t *pEvent)
 {
@@ -368,12 +402,11 @@ ucxhURC_parseResult_t onUNSTAT_createEvent(uint8_t numParams, const char *ppPara
         const char *interface_id_s        = ppParams[1];
         const char *status_id_s           = ppParams[2];
         const char *status_val            = ppParams[3];
-        const char *ipv6_status_state     = ppParams[4];
 
         udprintf(UCXH_PARSER_TRACE_URC, 2, "%s (Network Status) "
             "interface_id='%s', status_id='%s', status_val='%s', ipv6_status_state='%s'\n", 
             ppParams[0],
-            interface_id_s, status_id_s, status_val, numParams >= 5 ? ipv6_status_state: "");
+            interface_id_s, status_id_s, status_val, numParams >= 5 ? ppParams[4] : "");
 
         ucxhPARSER_urcNetworkStatusEvent_t *network_status = NULL;
         STRCPY2INT(interface_id, interface_id_s,  &success);
@@ -401,7 +434,11 @@ ucxhURC_parseResult_t onUNSTAT_createEvent(uint8_t numParams, const char *ppPara
                 case 210: // FALLTHROUGH
                 case 211: // FALLTHROUGH
                 case 212: {
+                    ASSERTPARAMS(numParams, ppParams, 5);
+
                     int index = status_id - 210;
+                    const char *ipv6_status_state = ppParams[4];
+
                     STRCPY2ARRAY(network_status->ipv6_address[index].ipv6_address,      status_val, &success);
                     if (success) {
                         STRCPY2INT(  network_status->ipv6_address[index].ipv6_status_state, ipv6_status_state, &success);
@@ -711,7 +748,7 @@ ucxhURC_parseResult_t onUUWLE_createEvent(uint8_t numParams, const char *ppParam
     bool success = false;
 
     assert(pEvent != NULL);
-    ASSERTPARAMS(numParams, ppParams, 2);
+    ASSERTPARAMS(numParams, ppParams, 4);
 
     const char *connection_id_s = ppParams[1];
     const char *bssid = ppParams[2];
@@ -825,4 +862,54 @@ ucxhURC_parseResult_t onUWSSTAT_createEvent(uint8_t numParams, const char *ppPar
     }
 
     return (success ? ucxhURC_PARSE_RESULT_OK : ucxhURC_PARSE_RESULT_ERROR);
+}
+
+ucxhURC_parseResult_t onUWSCAN_createEvent(uint8_t numParams, const char *ppParams[], ucxhPARSER_urcWifiScanEvent_t *pEvent)
+{
+    ucxhPARSER_urcWifiScanEvent_t event = {0};
+    bool success = false;
+
+    assert(pEvent != NULL);
+    ASSERTPARAMS(numParams, ppParams, 6);
+
+    const char *bssid = ppParams[1];
+    // TODO: op_mode
+    const char *ssid = ppParams[3];
+    const char *channel = ppParams[4];
+    const char *rssi = ppParams[5];
+    // TODO: authentication_suites
+	// TODO: unicast_ciphers
+    // TODO: group_cihpers
+    // TODO: rsn_cap
+    // TODO: country_code
+    // TODO: mob_domain
+
+    STRCPY2ARRAY(event.bssid, bssid, &success);
+    if (!success) {
+        udprintf(UCXH_PARSER_TRACE_URC, 1, "Unparsable parameter 'BSSID' %s\n", bssid);
+        return ucxhURC_PARSE_RESULT_ERROR;
+    }
+
+    STRCPY2INT(event.channel, channel, &success);
+    if (!success) {
+        udprintf(UCXH_PARSER_TRACE_URC, 1, "Unparsable parameter 'Channel' %s\n", channel);
+        return ucxhURC_PARSE_RESULT_ERROR;
+    }
+
+    STRCPY2ARRAY(event.ssid, ssid, &success);
+    if (!success) {
+        udprintf(UCXH_PARSER_TRACE_URC, 1, "Unparsable parameter 'BSSID' %s\n", ssid);
+        return ucxhURC_PARSE_RESULT_ERROR;
+    }
+
+    STRCPY2INT(event.rssi, rssi, &success);
+    if (!success) {
+        udprintf(UCXH_PARSER_TRACE_URC, 1, "Unparsable parameter 'Rssi' %s\n", rssi);
+        return ucxhURC_PARSE_RESULT_ERROR;
+    }
+
+
+    assert(success);
+    memcpy(pEvent, &event, sizeof(event));
+    return ucxhURC_PARSE_RESULT_OK;
 }

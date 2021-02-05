@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['lf_1701',['LF',['../ucxh__serial_8h.html#a350c9d6cb81908d59427ee96844d1a9c',1,'ucxh_serial.h']]],
-  ['list_5fof_5fplus_5furc_1702',['LIST_OF_PLUS_URC',['../ucxh__urc_8h.html#a44fe167118c2a781861ba3efcb020106',1,'ucxh_urc.h']]]
+  ['get_5fcommand_1787',['GET_COMMAND',['../ex__http__get_8c.html#a73baaa9b97c700c08c8ba4b923b0d854',1,'ex_http_get.c']]]
 ];

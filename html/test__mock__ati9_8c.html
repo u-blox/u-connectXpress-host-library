@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="ublox-logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">u-connectXpress host library
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">AT and EDM parser for u-blox shortrange standalone modules</div>
   </td>
@@ -108,7 +108,7 @@ $(document).ready(function(){initNavTree('test__mock__ati9_8c.html',''); initRes
 </div><div class="textblock"><div class="dynheader">
 Include dependency graph for test_mock_ati9.c:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="test__mock__ati9_8c__incl.svg" width="1366" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
+<div class="center"><iframe scrolling="no" frameborder="0" src="test__mock__ati9_8c__incl.svg" width="1343" height="486"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe>
 </div>
 </div>
 </div>
@@ -139,7 +139,7 @@ Variables</h2></td></tr>
 <p>In case you provide us a feedback or make a contribution in the form of a further development of the Deliverable (“Contribution”), u-blox will have the same rights as granted to you, namely to use, copy, modify and distribute the Contribution provided to us for any purpose without fee.</p>
 <p>Component: u-connectXpress Host Library</p>
 <dl class="test"><dt><b><a class="el" href="test.html#_test000010">Test:</a></b></dt><dd><a class="el" href="test__mock__ati9_8c.html" title="Hello, World / Issue AT command to mocked serial driver.">test_mock_ati9.c</a> Unit-test: Hello, World / Issue AT command to mocked serial driver. </dd></dl>
-<h2><a class="anchor" id="autotoc_md55"></a>
+<h2><a class="anchor" id="autotoc_md64"></a>
 Introduction</h2>
 <p>This test is a basic "Hello, World", which - using AT mode and mocked serial port - tests</p>
 <ul>
@@ -150,7 +150,7 @@ Introduction</h2>
 <li>Close the serial port</li>
 </ul>
 <p>Full source in <code><a class="el" href="test__mock__ati9_8c.html" title="Hello, World / Issue AT command to mocked serial driver.">test/test_mock_ati9.c</a></code></p>
-<h2><a class="anchor" id="autotoc_md56"></a>
+<h2><a class="anchor" id="autotoc_md65"></a>
 Typical response (When compiled with \ref &lt;tt&gt;UCXH_SERIAL_TRACE_MOCK 3&lt;/tt&gt;)</h2>
 <pre class="fragment">Trying Enter AT mode...
 (mocked) ucxhSERIAL_write request to write 3 bytes, returning 3 since writeResult=4 and res=3: '+++'
@@ -171,7 +171,7 @@ Trying Waiting for OK
 (mocked) ucxhSERIAL_read: returning 57 bytes: 'ATI9↵↓"2.1.0-017","NINA-W13X-2.1.0-017-0-g253211b6"↵↓OK↵↓'
 test_mock_ati9.c/onUnknownURC: 'ATI9'
 test_mock_ati9.c/onI9: Application Version: '"2.1.0-017"' Unique Identifier: '"NINA-W13X-2.1.0-017-0-g253211b6"'
-</pre><h3><a class="anchor" id="autotoc_md57"></a>
+</pre><h3><a class="anchor" id="autotoc_md66"></a>
 Description</h3>
 <pre class="fragment">All outputs not preceeded by (mocked) should basically match the output of test_ati9.
 </pre> 

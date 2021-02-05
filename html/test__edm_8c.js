@@ -24,5 +24,7 @@ var test__edm_8c =
     [ "edmDataCommandPacket", "test__edm_8c.html#a32bbe63e129da36322fe5c4515f36338", null ],
     [ "edmDataCommandHead", "test__edm_8c.html#a1f89b3e0bcb6c8efc7ac26ea93c868f4", null ],
     [ "edmRequestHead", "test__edm_8c.html#a9b5ada1531119e1d44ea74b37f655c13", null ],
+    [ "edmGoogleResponse", "test__edm_8c.html#a902ac1aaa4f68cf22d34c2e4d25b58ee", null ],
+    [ "edmGoogleReponseTestData", "test__edm_8c.html#a4fd76a7a1a58304a74fcc669a2a76c93", null ],
     [ "edmAtString", "test__edm_8c.html#a4843c99f86dc875961c33032c06b57f8", null ]
 ];

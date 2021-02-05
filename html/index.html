@@ -27,7 +27,7 @@
   <td id="projectlogo"><img alt="Logo" src="ublox-logo.webp"/></td>
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">u-connectXpress host library
-   &#160;<span id="projectnumber">0.3</span>
+   &#160;<span id="projectnumber">0.4</span>
    </div>
    <div id="projectbrief">AT and EDM parser for u-blox shortrange standalone modules</div>
   </td>
@@ -95,6 +95,7 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 <li>NINA-B1</li>
 <li>NINA-B2</li>
 <li>NINA-B31</li>
+<li>NINA-B41</li>
 <li>NINA-W13</li>
 <li>NINA-W15</li>
 <li>ODIN-W2</li>
@@ -125,7 +126,7 @@ Running the second examples on CygWin</h2>
 <ul>
 <li>Connect a NINA-W13, NINA-W15 or ODIN-W2 to your computer.</li>
 <li>Define the serial port to use in the <code><a class="el" href="ucxh__config_8h.html">include/ucxh_config.h</a></code> file.</li>
-<li>Configure your network and create a small server. This can be done either by connecting to your existing network, and using your computer as a server, or by using another NINA-W10/W13 or ODIN-W2 as WiFi AP and/or server.<ul>
+<li>Configure your network and create a small server. This can be done either by connecting to your existing network, and using your computer as a server, or by using another NINA-W10/W13 or ODIN-W2 as WiFi AP and/or server:<ul>
 <li>To use another u-blox module as WiFi AP and server, configure it to use IP number and gateway address <code>192.168.2.1</code>, and enable a TCP server on port <code>12345</code>. This is easiest done using <code>s-center</code>.<ul>
 <li>In s-center, connect to the u-blox standalone module you intend to use as WiFI AP.</li>
 <li>From the File menu, select Download Configuration and select the file <code>resources/config_ex_callbacks_edm_wifi.txt</code>.</li>
@@ -180,43 +181,67 @@ ex_callbacks_edm_wifi</h2>
 <li>Reboot</li>
 </ul>
 <p><a class="el" href="ex_callbacks_edm_wifi-example.html">More information ...</a></p>
-<h1><a class="anchor" id="autotoc_md9"></a>
+<h2><a class="anchor" id="autotoc_md9"></a>
+ex_wifi_pos</h2>
+<p>This example shows how to scan for APs and request position from Thingstream WiFi positioning server using MQTT over TLS:</p>
+<ul>
+<li>Enter Extended Data Mode (EDM)</li>
+<li>Configure the module to connect to an AP</li>
+<li>Connect to a Thingstream WiFi positioning server at mqtt.thingstream.io using MQTT over TLS and the credentials configured in <a class="el" href="ex__config_8h.html">ex_config.h</a></li>
+<li>Scan for nearby APs</li>
+<li>Publish the list of APs to the Thingstream WiFi positioning server using MQTT</li>
+<li>Obtain and print the position as determined by the Thingstream WiFi positioning server</li>
+</ul>
+<dl class="section note"><dt>Note</dt><dd>In order for this example to work, you must obtain a Thingstream account and configure the flow for a WiFi positioning server. See the u-connectXpress IoT cloud connectivity application note at <a href="https://www.u-blox.com/en/docs/UBX-19010078">https://www.u-blox.com/en/docs/UBX-19010078</a> for more information.</dd></dl>
+<p><a class="el" href="ex_wifi_pos-example.html">More information ...</a></p>
+<h2><a class="anchor" id="autotoc_md10"></a>
+ex_http_get</h2>
+<p>This example is a shows how to connect to a HTTP-server and issue a GET-command:</p>
+<ul>
+<li>Enter Extended Data Mode (EDM)</li>
+<li>Configure the module as a WiFi station</li>
+<li>Wait until the WiFi link is up and the module has received a DHCP IP address.</li>
+<li>Connect to a remote server.</li>
+<li>Reboot</li>
+</ul>
+<p><a class="el" href="ex_http_get-example.html">More information ...</a></p>
+<h1><a class="anchor" id="autotoc_md11"></a>
 Porting</h1>
 <p>The library has been tested using gcc on CygWin, with the only file which contains Microsoft Windows-specific code, is ucxh_serial_win.c, in the <code>src/windows</code> directory.</p>
 <p>Replace that file with code which implements the interface described in serial.h .</p>
 <p>In order to port to an RTOS, such as FreeRTOS, a few lines needs to be changed in <a class="el" href="group__internal.html#ga3ea523311f50bfc3d2267a10bd21722b">atParseResponse()</a> of the <code>src/ucxh_parser.c</code> file</p>
-<h1><a class="anchor" id="autotoc_md10"></a>
+<h1><a class="anchor" id="autotoc_md12"></a>
 Testing</h1>
 <p>A number of test programs for unit-tests, and some programs with an expected output are also available, when <code>runExamples.sh</code> is executed:</p>
-<h2><a class="anchor" id="autotoc_md11"></a>
+<h2><a class="anchor" id="autotoc_md13"></a>
 Unit-tests</h2>
-<h3><a class="anchor" id="autotoc_md12"></a>
+<h3><a class="anchor" id="autotoc_md14"></a>
 test_getgeneral</h3>
 <p>Unit-test for the generation and parsing of General commands from chapter 3 in the u-connectXpress AT command manual.</p>
 <p><a class="el" href="test__getgeneral_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md13"></a>
+<h3><a class="anchor" id="autotoc_md15"></a>
 test_getsystem</h3>
 <p>Unit-test for the generation and parsing of System commands from chapter 4 in the u-connectXpress AT command manual.</p>
 <p><a class="el" href="test__getsystem_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md14"></a>
+<h3><a class="anchor" id="autotoc_md16"></a>
 test_at_wifi</h3>
 <p>Unit-test for the generation and parsing of WiFi commands from chapter 7 and some Network command from chapter 10 in the u-connectXpress AT command manual.</p>
 <p><a class="el" href="test__at__wifi_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md15"></a>
+<h3><a class="anchor" id="autotoc_md17"></a>
 test_tokenizer</h3>
 <p>Unit-test for the tokenizer part of the library.</p>
 <p><a class="el" href="test__tokenizer_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md16"></a>
+<h3><a class="anchor" id="autotoc_md18"></a>
 test_send</h3>
 <p>Unit-testing the functions used for building and sending AT commands.</p>
 <p><a class="el" href="test__send_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md17"></a>
+<h3><a class="anchor" id="autotoc_md19"></a>
 test_mock_ati9</h3>
 <p>Unit-testinf for the actual mocking framework, mimicing the behavior of <code>\ref <a class="el" href="test__ati9_8c.html" title="Tests Hello, World / Issue AT command.">test_ati9.c</a></code> .</p>
 <p><a class="el" href="test__mock__ati9_8c.html">More information ...</a></p>
-<h2><a class="anchor" id="autotoc_md18"></a>
+<h2><a class="anchor" id="autotoc_md20"></a>
 Manual test</h2>
-<h3><a class="anchor" id="autotoc_md19"></a>
+<h3><a class="anchor" id="autotoc_md21"></a>
 test_ati9</h3>
 <p>This test is a basic "Hello, World", which - using AT mode - tests</p>
 <ul>
@@ -227,7 +252,7 @@ test_ati9</h3>
 <li>Close the serial port</li>
 </ul>
 <p><a class="el" href="test__ati9_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md20"></a>
+<h3><a class="anchor" id="autotoc_md22"></a>
 test_datamode</h3>
 <p>This test is a partial test which - using AT mode and Data mode - tests</p>
 <ul>
@@ -235,7 +260,7 @@ test_datamode</h3>
 <li>Transmit raw data in the Data mode</li>
 </ul>
 <p><a class="el" href="test__datamode_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md21"></a>
+<h3><a class="anchor" id="autotoc_md23"></a>
 test_edm_at</h3>
 <p>This test is a basic Hello, World, which - using EDM - tests</p>
 <ul>
@@ -245,7 +270,7 @@ test_edm_at</h3>
 <li>Leave EDM mode</li>
 </ul>
 <p><a class="el" href="test__edm__at_8c.html">More information ...</a></p>
-<h3><a class="anchor" id="autotoc_md22"></a>
+<h3><a class="anchor" id="autotoc_md24"></a>
 test_edm_at_read</h3>
 <p>This test is a basic Hello, World, which - using EDM - tests</p>
 <ul>
@@ -255,7 +280,7 @@ test_edm_at_read</h3>
 </ul>
 <p><a class="el" href="test__edm__at_8c.html">More information ...</a></p>
 <p>All testing has been done using gcc 9.2.0 on CygWin connected to either NINA-W152 2.1.0 or NINA-W132 2.1.0.</p>
-<h1><a class="anchor" id="autotoc_md23"></a>
+<h1><a class="anchor" id="autotoc_md25"></a>
 Using runExamples.sh</h1>
 <p>By default, it will</p>
 <ul>
@@ -264,7 +289,23 @@ Using runExamples.sh</h1>
 <li>Execute all manual unit-tests</li>
 <li>Re-generate all documentation (assuming <code>doxygen</code> and <code>graphwiz</code> is installed).</li>
 </ul>
-<h1><a class="anchor" id="autotoc_md24"></a>
+<h1><a class="anchor" id="autotoc_md26"></a>
+Revision history</h1>
+<h2><a class="anchor" id="autotoc_md27"></a>
+0.3</h2>
+<p>Initial public release.</p>
+<h2><a class="anchor" id="autotoc_md28"></a>
+0.4</h2>
+<p>New examples:</p><ul>
+<li>ex_wifi_pos: Example shows how to scan for APs and request position from Thingstream WiFi positioning server using MQTT over TLS <a class="el" href="ex_wifi_pos-example.html">More information ...</a></li>
+<li>ex_http_get: Example shows how to connect to a HTTP-server and issue a GET-command <a class="el" href="ex_http_get-example.html">More information ...</a></li>
+</ul>
+<p>Fixed some bugs:</p><ul>
+<li>EDM parse failed for incomingg packets &gt; 128 bytes</li>
+<li>Potential buffer overflow in createUrlQueryString()</li>
+<li>Non-portable integer conversion in <a class="el" href="ucxh__parser_8h.html#a71ff00e420f7bcaf561f97882d8d4108">STRCPY2INT()</a></li>
+</ul>
+<h1><a class="anchor" id="autotoc_md29"></a>
 Disclaimer</h1>
 <p>Copyright (C) u-blox</p>
 <p>u-blox reserves all rights in this deliverable (documentation, software, etc., hereafter “Deliverable”).</p>

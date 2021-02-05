@@ -141,7 +141,8 @@ void atEdmParsePayloadEvent(const ucxhEDM_event_t* eventData, size_t atMaxBuffer
             eventData->params.ipv4ConnectEvent.remoteAddress[3],
             eventData->params.ipv4ConnectEvent.remotePort,
               (eventData->params.ipv4ConnectEvent.protocol == ucxhEDM_IP_PROTOCOL_TCP ? "TCP" : 
-              (eventData->params.ipv4ConnectEvent.protocol == ucxhEDM_IP_PROTOCOL_UDP ? "UDP" : "UNKNOWN")));
+              (eventData->params.ipv4ConnectEvent.protocol == ucxhEDM_IP_PROTOCOL_UDP ? "UDP" : 
+              (eventData->params.ipv4ConnectEvent.protocol == ucxhEDM_IP_PROTOCOL_MQTT ? "MQTT" : "UNKNOWN"))));
       }
       break;
 
@@ -370,7 +371,7 @@ int atEdmReadPacket(int (*defaultReadMore)(uint8_t*, size_t), uint8_t* inData, s
   assert(pos >= ucxhEDM_MIN_SIZE);
   int result = edmParse(inData, pos, eventData, &consumed);
   assert(result != ucxhEDM_ERROR_PARAM); // We already ensured we call with correct parameters
- udprintf(UCXH_PARSER_TRACE_EDM_LL_PARSER, 2, "atEdmReadPacket: edmParse returned result=%d, consumed=%d\n", result, consumed);
+  udprintf(UCXH_PARSER_TRACE_EDM_LL_PARSER, 2, "atEdmReadPacket: edmParse returned result=%d, consumed=%d\n", result, consumed);
 
   switch (result) {
     case ucxhEDM_OK:
