@@ -1,3 +1,7 @@
+## Deprecation note!
+**Please note: This repository is deprecated and it is no longer actively maintained**.
+We recommend using https://github.com/u-blox/ubxlib instead.
+
 # Introduction
 
 The u-connectXpress host library is an example on how to interface the
