@@ -524,7 +524,6 @@ bool ucxhPARSER_addByteArray(size_t size, const uint8_t *data)
     sprintf(atCommand+atCommandPos, "%02X", data[i]);
     atCommandPos += 2;
   }
-  atCommand[atCommandPos++] = '\0';
 
   return true;
 }
