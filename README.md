@@ -1,6 +1,6 @@
 ## Deprecation note!
 **Please note: This repository is deprecated and it is no longer actively maintained**.
-We recommend using [https://github.com/u-blox/ubxlib](https://github.com/u-blox/ucxclient) instead.
+We recommend using https://github.com/u-blox/ucxclient instead.
 
 # Introduction
 
